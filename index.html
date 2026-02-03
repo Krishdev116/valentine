@@ -1,10 +1,8 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Be My Valentine 💘 </title>
+<title>Be My Valentine 💘</title>
 
 <style>
   body {
@@ -59,6 +57,8 @@
   #result {
     display: none;
     margin-top: 20px;
+    <p class="final-quote" id="finalQuote"></p>
+
   }
 
   img {
@@ -95,20 +95,21 @@
 </audio>
 
 <div class="card" id="card">
-  <h1>Dear❤️ <span id="name">Ratna                    </span></h1>
+  <h1>Hey ❤️ <span id="name">YOUR_GIRLFRIEND_NAME</span></h1>
   <p>Will you be my Valentine? 💘</p>
 
   <button id="yesBtn" onclick="sayYes()">YES 😍</button>
   <button id="noBtn">NO 🙈</button>
 
   <div id="result">
-    <h2>I'm sooo lucky 😘💞</h2>
+    <h2>You’re sooo lucky 😘💞</h2>
     <img src="https://media.giphy.com/media/l0MYyDa8S9ghzNebm/giphy.gif" />
     <p>I knew you’d say YES 💖</p>
   </div>
 </div>
 
 <script>
+  const girlName = "Ratna";
   const noBtn = document.getElementById("noBtn");
   const music = document.getElementById("music");
 
@@ -122,10 +123,15 @@
   });
 
   function sayYes() {
-    document.getElementById("result").style.display = "block";
-    music.play();
-    createHearts();
-  }
+  document.getElementById("result").style.display = "block";
+
+  document.getElementById("finalQuote").innerText =
+    `“${girlName}, knowing you has changed my world — loving you is the best thing I’ll ever do.” 💞`;
+
+  music.play();
+  createHearts();
+}
+
 
   // Floating hearts generator
   function createHearts() {
