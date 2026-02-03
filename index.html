@@ -56,10 +56,14 @@
     color: white;
   }
 
-  ##noBtn {
+ #noBtn {
   background: #dc3545;
   color: white;
-  position: relative;
+  position: fixed;
+  transition: left 0.2s ease, top 0.2s ease;
+}
+#noBtn {
+  transition: left 0.2s ease, top 0.2s ease, transform 0.2s;
 }
 
   #result {
@@ -123,8 +127,15 @@
 
   // NO button runs away + shrinks
   noBtn.addEventListener("mouseover", () => {
-  const x = Math.random() * 120 - 60;
-  const y = Math.random() * 80 - 40;
+  const padding = 20;
+
+  const x = Math.random() * (window.innerWidth - noBtn.offsetWidth - padding);
+  const y = Math.random() * (window.innerHeight - noBtn.offsetHeight - padding);
+
+  noBtn.style.left = x + "px";
+  noBtn.style.top = y + "px";
+});
+
 
   noBtn.style.transform = `translate(${x}px, ${y}px) scale(0.9)`;
 });
