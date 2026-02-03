@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,14 +26,6 @@
     box-shadow: 0 15px 40px rgba(0,0,0,0.25);
     z-index: 10;
   }
-  
-  .buttons {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  margin-top: 20px;
-  position: relative;
-}
 
   h1 {
     color: #e60073;
@@ -56,15 +50,11 @@
     color: white;
   }
 
- #noBtn {
-  background: #dc3545;
-  color: white;
-  position: fixed;
-  transition: left 0.2s ease, top 0.2s ease;
-}
-#noBtn {
-  transition: left 0.2s ease, top 0.2s ease, transform 0.2s;
-}
+  #noBtn {
+    background: #dc3545;
+    color: white;
+    position: absolute;
+  }
 
   #result {
     display: none;
@@ -108,11 +98,8 @@
   <h1>Dear❤️ <span id="name">Ratna                    </span></h1>
   <p>Will you be my Valentine? 💘</p>
 
-  <div class="buttons">
   <button id="yesBtn" onclick="sayYes()">YES 😍</button>
   <button id="noBtn">NO 🙈</button>
-</div>
-
 
   <div id="result">
     <h2>I'm sooo lucky 😘💞</h2>
@@ -127,18 +114,12 @@
 
   // NO button runs away + shrinks
   noBtn.addEventListener("mouseover", () => {
-  const padding = 20;
-
-  const x = Math.random() * (window.innerWidth - noBtn.offsetWidth - padding);
-  const y = Math.random() * (window.innerHeight - noBtn.offsetHeight - padding);
-
-  noBtn.style.left = x + "px";
-  noBtn.style.top = y + "px";
-});
-
-
-  noBtn.style.transform = `translate(${x}px, ${y}px) scale(0.9)`;
-});
+    const x = Math.random() * (window.innerWidth - 120);
+    const y = Math.random() * (window.innerHeight - 60);
+    noBtn.style.left = x + "px";
+    noBtn.style.top = y + "px";
+    noBtn.style.transform = "scale(0.8)";
+  });
 
   function sayYes() {
     document.getElementById("result").style.display = "block";
