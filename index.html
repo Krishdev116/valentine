@@ -57,8 +57,6 @@
   #result {
     display: none;
     margin-top: 20px;
-    <p class="final-quote" id="finalQuote"></p>
-
   }
 
   img {
@@ -84,25 +82,6 @@
       opacity: 0;
     }
   }
-    .final-quote {
-  margin-top: 10px;
-  font-size: 16px;
-  font-style: italic;
-  color: #b30059;
-  animation: fadeIn 1.5s ease;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(8px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-       
 </style>
 </head>
 
@@ -124,14 +103,10 @@
     <h2>You’re sooo lucky 😘💞</h2>
     <img src="https://media.giphy.com/media/l0MYyDa8S9ghzNebm/giphy.gif" />
     <p>I knew you’d say YES 💖</p>
-    <p class="final-quote">
-  “Knowing you has changed my world — loving you is the best thing I’ll ever do.” 💞
-</p>
   </div>
 </div>
 
 <script>
-  const girlName = "Ratna";
   const noBtn = document.getElementById("noBtn");
   const music = document.getElementById("music");
 
@@ -145,15 +120,10 @@
   });
 
   function sayYes() {
-  document.getElementById("result").style.display = "block";
-
-  document.getElementById("finalQuote").innerText =
-    `“${girlName}, knowing you has changed my world — loving you is the best thing I’ll ever do.” 💞`;
-
-  music.play();
-  createHearts();
-}
-
+    document.getElementById("result").style.display = "block";
+    music.play();
+    createHearts();
+  }
 
   // Floating hearts generator
   function createHearts() {
